@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/banking_product_systems_db
+    url: jdbc:postgresql://localhost:5433/banking_product_systems_db
     username: ${DB_USER}
     password: ${DB_PASSWORD}
   jpa:

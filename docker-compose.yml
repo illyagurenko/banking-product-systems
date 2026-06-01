@@ -1,14 +1,16 @@
 services:
-  postgres:
-    image: postgres:18-alpine
+  postgres-database:
+    image: postgres:18
     container_name: system_products
+    ports:
+      - "5433:5432"
     environment:
-      POSTGRES_DB: ${DB}
       POSTGRES_USER: ${USER}
       POSTGRES_PASSWORD: ${PASSWORD}
-    ports:
-      - "5432:5432"
+      POSTGRES_DB: ${DB}
+    restart: unless-stopped
     volumes:
-      - pgdata:/var/lib/postgresql/data
+      - pgdata:/var/lib/postgresql
+
 volumes:
   pgdata:

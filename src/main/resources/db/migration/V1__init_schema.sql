@@ -13,8 +13,8 @@ create table product_applications(
     product_type varchar(30) not null,
     status varchar(30) not null,
     rejection_reason varchar(255),
-    created_at timestamp with time zone current_timestamp,
-    updated_at timestamp with time zone current_timestamp,
+    created_at timestamp with time zone default current_timestamp,
+    updated_at timestamp with time zone default current_timestamp,
     constraint fk_client foreign key (client_id) references clients(id)
 );
 
