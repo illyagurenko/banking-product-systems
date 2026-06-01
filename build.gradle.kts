@@ -35,6 +35,12 @@ dependencies {
 
 	runtimeOnly("org.postgresql:postgresql")
 
+	// security
+	implementation("org.springframework.boot:spring-boot-starter-security")
+
+	// validation
+	implementation("org.springframework.boot:spring-boot-starter-validation")
+
 	// lombok
 	compileOnly("org.projectlombok:lombok")
 	annotationProcessor("org.projectlombok:lombok")
