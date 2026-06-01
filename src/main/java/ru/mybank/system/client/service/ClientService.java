@@ -24,13 +24,16 @@ public class ClientService {
                 client.getPhoneNumber());
     }
 
-    public void saveClient(ClientRequestDto clientRequestDto){
+    public ClientResponseDto saveClient(ClientRequestDto clientRequestDto){
         Client newClient = new Client(
                 clientRequestDto.firstName(),
                 clientRequestDto.lastName(),
                 clientRequestDto.phoneNumber(),
                 encoder.encode(clientRequestDto.password()));
-
         clientRepository.save(newClient);
+        return new ClientResponseDto(
+                newClient.getFirstName(),
+                newClient.getLastName(),
+                newClient.getPhoneNumber());
     }
 }
