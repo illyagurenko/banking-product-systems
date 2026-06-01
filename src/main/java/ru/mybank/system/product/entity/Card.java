@@ -24,8 +24,9 @@ public class Card {
     @Column(name = "card_number", nullable = false, unique = true, length = 255)
     private String cardNumber;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "card_type", nullable = false, length = 30)
-    private String cardType;
+    private CardType cardType;
 
     @Column(name = "holder_name", nullable = false, length = 30)
     private String holderName;
