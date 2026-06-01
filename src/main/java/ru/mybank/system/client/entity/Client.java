@@ -5,6 +5,10 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import ru.mybank.system.product.entity.Account;
+import ru.mybank.system.product.entity.ProductApplication;
+
+import java.util.List;
 
 @Entity
 @Table(name = "clients")
@@ -32,6 +36,12 @@ public class Client {
     @Enumerated(EnumType.STRING)
     @Column(name = "role", nullable = false, length = 15)
     private Role role;
+
+    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
+    private List<ProductApplication> applications;
+
+    @OneToMany(mappedBy = "mainClient", cascade = CascadeType.ALL)
+    private List<Account> accounts;
 
     public Client(String firstName, String lastName, String phoneNumber, String passwordHash) {
         this.firstName = firstName;
