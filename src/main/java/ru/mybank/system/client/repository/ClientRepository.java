@@ -7,6 +7,6 @@ import ru.mybank.system.client.entity.Client;
 import java.util.Optional;
 
 @Repository
-public interface ClientRepository extends JpaRepository<Long, Client> {
+public interface ClientRepository extends JpaRepository<Client, Long> {
     Optional<Client> findByPhoneNumber(String phoneNumber);
 }

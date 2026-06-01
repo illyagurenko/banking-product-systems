@@ -32,4 +32,12 @@ public class Client {
     @Enumerated(EnumType.STRING)
     @Column(name = "role", nullable = false, length = 15)
     private Role role;
+
+    public Client(String passwordHash, String phoneNumber, String lastName, String firstName) {
+        this.passwordHash = passwordHash;
+        this.phoneNumber = phoneNumber;
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.role = Role.ROLE_USER;
+    }
 }
