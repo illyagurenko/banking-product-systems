@@ -15,7 +15,7 @@ public record ClientRequestDto(
     @Pattern(regexp = "^(\\+7|8)?\\d{10}$", message = "неверный формат номера телефона")
     String phoneNumber,
     @NotBlank(message = "пароль не должен быть пустым")
-    @Size(min = 2, max = 10, message = "пароль должна быть от 2 до 10 символов")
+    @Size(min = 2, max = 30, message = "пароль должен быть от 2 до 30 символов")
     String password
 ) {
 }

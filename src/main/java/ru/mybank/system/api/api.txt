@@ -6,3 +6,4 @@
 2) GlobalExceptionHandler - класс обработчик ошибок, возвращающий dto ApiError, пока обрабатывает ошибки:
     EntityNotFoundException - отсутствие объекта в бд
     Exception - перехват всех остальных ошибок
+    MethodArgumentNotValidException - перехват невалидных данных от клиента

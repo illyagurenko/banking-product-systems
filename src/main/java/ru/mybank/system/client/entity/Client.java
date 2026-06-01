@@ -33,11 +33,12 @@ public class Client {
     @Column(name = "role", nullable = false, length = 15)
     private Role role;
 
-    public Client(String passwordHash, String phoneNumber, String lastName, String firstName) {
-        this.passwordHash = passwordHash;
-        this.phoneNumber = phoneNumber;
-        this.lastName = lastName;
+    public Client(String firstName, String lastName, String phoneNumber, String passwordHash) {
         this.firstName = firstName;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+        this.passwordHash = passwordHash;
         this.role = Role.ROLE_USER;
     }
+
 }
